@@ -76,7 +76,7 @@ class NewVisitorTest(LiveServerTestCase):
         # is less interesting than Edith...
         inputbox = self.browser.find_element_by_id('id_new_item')
         inputbox.send_keys('Buy milk')
-        inputbox.send_keys('Keys.ENTER')
+        inputbox.send_keys(Keys.ENTER)
 
         # Francis gets his own unique URL
         francis_list_url = self.browser.current_url
@@ -88,7 +88,7 @@ class NewVisitorTest(LiveServerTestCase):
         self.assertNotIn('Buy peacock feathers', page_text)
         self.assertIn('Buy milk', page_text)
 
-        
+
         self.fail('Finish the test!')
 
         # She visits that URL - her to-do list is still there.
